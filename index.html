@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Auto Decode — static decoder</title>
+    <link rel="stylesheet" href="assets/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Auto Decode</h1>
+      <p class="tag">Automatically detect and decode strings — Base64, Hex, Binary, ROT13, L33t, Morse, Caesar and more.</p>
+    </header>
+
+    <main class="container">
+      <section class="panel">
+        <label for="inputText">Input string to decode</label>
+        <textarea id="inputText" placeholder="Paste encoded text here" rows="6"></textarea>
+
+        <div class="controls">
+          <select id="algoSelect">
+            <option value="auto">Auto-detect</option>
+            <option value="base64">Base64</option>
+            <option value="hex">Hexadecimal</option>
+            <option value="binary">Binary</option>
+            <option value="rot13">ROT13</option>
+            <option value="leet">L33t (leet)</option>
+            <option value="morse">Morse</option>
+            <option value="caesar">Caesar (shift)</option>
+            <option value="url">URL Decode</option>
+          </select>
+
+          <input id="caesarShift" type="number" min="1" max="25" value="13" title="Shift for Caesar (used when Caesar selected manually)" />
+
+          <button id="decodeBtn">Decode</button>
+          <button id="clearBtn" class="muted">Clear</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Results</h2>
+        <div id="resultArea" class="result"></div>
+
+        <div class="result-actions">
+          <button id="copyBtn">Copy result</button>
+          <button id="downloadBtn">Download</button>
+        </div>
+
+        <details id="candidates" class="candidates" open>
+          <summary>Candidate decodings</summary>
+          <div id="candidateList"></div>
+        </details>
+      </section>
+
+      <section class="panel examples">
+        <h2>Examples</h2>
+        <ul>
+          <li><strong>Base64:</strong> SGVsbG8sIHdvcmxkIQ==</li>
+          <li><strong>Hex:</strong> 48656c6c6f2c20776f726c6421</li>
+          <li><strong>Binary:</strong> 01001000 01100101 01101100 01101100 01101111</li>
+          <li><strong>ROT13:</strong> Uryyb, jbeyq!</li>
+          <li><strong>L33t:</strong> 1337 1s fun</li>
+          <li><strong>Morse:</strong> .... . .-.. .-.. --- / .-- --- .-. .-.. -..</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="assets/script.js" defer></script>
+  </body>
+</html>

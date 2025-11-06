@@ -1,0 +1,31 @@
+:root{
+  --bg:#0f1724;
+  --panel:#0b1220;
+  --muted:#9aa6b2;
+  --accent:#7dd3fc;
+  --accent-2:#60a5fa;
+  --text:#e6eef6;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#041226);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+.container{max-width:900px;margin:28px auto;padding:16px}
+.site-header{text-align:center;margin:28px 0}
+.site-header h1{margin:0;font-size:1.8rem}
+.tag{color:var(--muted);margin-top:6px}
+.panel{background:rgba(255,255,255,0.03);border-radius:10px;padding:14px;margin-bottom:12px}
+label{display:block;margin-bottom:6px;color:var(--muted)}
+textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);resize:vertical}
+.controls{display:flex;gap:8px;align-items:center;margin-top:10px}
+select,input[type=number]{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:var(--text)}
+button{background:linear-gradient(180deg,var(--accent),var(--accent-2));border:0;padding:8px 12px;border-radius:8px;color:#032;cursor:pointer}
+button.muted{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+.result{min-height:70px;padding:10px;border-radius:8px;background:rgba(2,6,23,0.5);white-space:pre-wrap}
+.result-actions{margin-top:8px;display:flex;gap:8px}
+.candidates{margin-top:10px}
+.candidates summary{cursor:pointer;color:var(--muted)}
+.candidate{padding:8px;border-radius:6px;margin:8px 0;background:rgba(255,255,255,0.015)}
+.candidate .meta{font-size:0.85rem;color:var(--muted);margin-bottom:6px}
+.examples ul{margin:0;padding-left:18px}
+.site-footer{text-align:center;color:var(--muted);padding:12px}
+
+@media (max-width:640px){.controls{flex-direction:column;align-items:stretch}button{width:100%}}
